@@ -8,6 +8,7 @@ import hibernate.demo.practice.entity.Course;
 import hibernate.demo.practice.entity.Instructor;
 import hibernate.demo.practice.entity.InstructorDetail;
 import hibernate.demo.practice.entity.Review;
+import hibernate.demo.practice.entity.Student;
 
 public class CreateCourseReviews {
 
@@ -17,10 +18,11 @@ public class CreateCourseReviews {
 				.addAnnotatedClass(InstructorDetail.class)
 				.addAnnotatedClass(Course.class)
 				.addAnnotatedClass(Review.class)
+				.addAnnotatedClass(Student.class)
 				.buildSessionFactory();
 		Session session = factory.getCurrentSession();
 		try{
-			int theId = 4;
+			int theId = 2;
 			session.beginTransaction();
 			Course tempCourse = session.get(Course.class, theId);
 			Review review1 = new Review("Nice Course");

@@ -38,6 +38,14 @@ public class CreateCourseAndStudentDemo {
 			tempCourse.addStudent(s2);
 			session.save(s1);
 			session.save(s2);
+			/*
+			int theId = 2;
+			int theStuId = 7;
+			Course tempCourse = session.get(Course.class, theId);
+			tempCourse.getStudents();
+			Student tempStudent = session.get(Student.class, theStuId);
+			tempStudent.addCourse(tempCourse);
+			session.save(tempStudent);*/
 			
 			session.getTransaction().commit();
 			System.out.println("saved students "+tempCourse.getStudents());
